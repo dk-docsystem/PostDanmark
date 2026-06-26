@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostDanmark - Bekræft Leveringsadresse</title>
+    <style>
+        /* PostDanmark Farvepalette & Standard-nulstilling */
+        :root {
+            --postdanmark-blue: #00A4D5;       /* Den klassiske PostDanmark lyseblå */
+            --postdanmark-dark: #002855;       /* Den dybe mørkeblå brugt til tekst/knapper */
+            --postdanmark-bg: #F2F7FA;         /* Lys gråblå baggrundsfarve */
+            --white: #FFFFFF;
+            --gray-border: #D1D9E0;
+        }
+
+        body {
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--postdanmark-bg);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--postdanmark-dark);
+        }
+
+        /* Top-bjælke (Header) */
+        header {
+            background-color: var(--white);
+            border-bottom: 3px solid var(--postdanmark-blue);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 24px;
+            color: var(--postdanmark-blue);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--postdanmark-dark);
+        }
+
+        /* Container til indhold */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Selve boksen/kortet */
+        .card {
+            background-color: var(--white);
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Post<span>Danmark</span></div>
+    </header>
+
+    <main>
+        <div class="card">
+            <!-- Indholdet af dit kort fortsætter her -->
+        </div>
+    </main>
+
+</body>
+</html>
