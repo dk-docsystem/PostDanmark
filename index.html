@@ -12,6 +12,12 @@
             --postdanmark-bg: #F2F7FA;         /* Lys gråblå baggrundsfarve */
             --white: #FFFFFF;
             --gray-border: #D1D9E0;
+            --text-muted: #6B7C96;
+            --error-red: #D9383A;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -40,6 +46,7 @@
             font-size: 24px;
             color: var(--postdanmark-blue);
             letter-spacing: -0.5px;
+            text-decoration: none;
         }
         
         .logo span {
@@ -63,21 +70,139 @@
             width: 100%;
             max-width: 500px;
             padding: 30px;
-            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--postdanmark-dark);
+        }
+
+        .status-msg {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        /* Formular-elementer */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--gray-border);
+            border-radius: 4px;
+            font-size: 15px;
+            color: var(--postdanmark-dark);
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: var(--postdanmark-blue);
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .col-6 {
+            flex: 1;
+        }
+
+        /* Knapper */
+        .btn-submit {
+            width: 100%;
+            background-color: var(--postdanmark-blue);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #008cb6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--postdanmark-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Post<span>Danmark</span></div>
+        <a href="#" class="logo">Post<span>Danmark</span></a>
     </header>
 
     <main>
         <div class="card">
-            <!-- Indholdet af dit kort fortsætter her -->
+            <h1>Bekræft din leveringsadresse</h1>
+            <p class="status-msg">
+                Vi har en pakke klar til levering, men mangler fuldstændige adresseoplysninger for at kunne gennemføre udbringningen. Venligst opdater informationerne nedenfor.
+            </p>
+
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="fullname">Fulde navn</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Fx. Jens Jensen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Adresse (Gade og husnummer)</label>
+                    <input type="text" id="address" name="address" placeholder="Fx. Hovedgaden 12, 2. tv" required>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="postal">Postnummer</label>
+                        <input type="text" id="postal" name="postal" placeholder="Fx. 2100" pattern="[0-9]{4}" required>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="city">By</label>
+                        <input type="text" id="city" name="city" placeholder="Fx. København Ø" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefonnummer</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Fx. 12345678" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Bekræft adresse og opdater</button>
+            </form>
         </div>
     </main>
+
+    <footer>
+        &copy; 2026 PostDanmark. Alle rettigheder forbeholdes.
+    </footer>
 
 </body>
 </html>
